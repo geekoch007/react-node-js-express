@@ -9,6 +9,10 @@ const PORT = 8081;
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.json({ message: 'Hello API' });
+});
+
 // route to get all product
 app.get('/api/getProducts', function (req, res) {
   db.query('select * from products where published = 1 order by id desc', (err, result) => {

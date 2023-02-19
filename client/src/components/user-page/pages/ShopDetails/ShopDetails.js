@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './shop-details.css';
+import { useParams, useNavigate } from 'react-router-dom';
 import 'assets/css/bootstrap.min.css';
 import 'assets/css/elegant-icons.css';
 import 'assets/css/font-awesome.min.css';
@@ -12,20 +13,84 @@ import Header from '../../Imports/Header';
 import Footer from '../../Imports/Footer';
 
 setTimeout(function () {
+    $(".loader").fadeOut();
+    $("#preloder").delay(200).fadeOut("slow");
+  
     //Canvas Menu
     $(".canvas__open").on('click', function () {
-        $(".offcanvas-menu-wrapper").addClass("active");
-        $(".offcanvas-menu-overlay").addClass("active");
+      $(".offcanvas-menu-wrapper").addClass("active");
+      $(".offcanvas-menu-overlay").addClass("active");
     });
-
+  
     $(".offcanvas-menu-overlay").on('click', function () {
-        $(".offcanvas-menu-wrapper").removeClass("active");
-        $(".offcanvas-menu-overlay").removeClass("active");
+      $(".offcanvas-menu-wrapper").removeClass("active");
+      $(".offcanvas-menu-overlay").removeClass("active");
     });
-}, 20);
+  }, 10);
+
 
 const ShopDetails = () => {
+    const[ user, setUser] = useState([]);
+    const [name, setname] = useState("");
+    const [rating, setrating] = useState("");
+    const [price, setprice] = useState("");
+    const [img1, setimg1] = useState("");
+    const [img2, setimg2] = useState("");
+    const [img3, setimg3] = useState("");
+    const [img4, setimg4] = useState("");
+    const [text, settext] = useState("");
+    const [sku, setsku] = useState("");
+    const [catagories, setcatagories] = useState("");
+    const [tag, settag] = useState("");
+    const [description1, setdescription1] = useState("");
+    const [description2, setdescription2] = useState("");
+    const [description3, setdescription3] = useState("");
+    const [customer_review1, setcustomer_review1] = useState("");
+    const [customer_review2, setcustomer_review2] = useState("");
+    const [addition_infomation1, setaddition_infomation1] = useState("");
+    const [addition_infomation2, setaddition_infomation2] = useState("");
+    const [addition_infomation3, setaddition_infomation3] = useState("");
 
+
+    const fetchData = () => {
+        return Axios.get(`http://localhost:8081/api/getshop/${id}`)
+              .then((data) => {
+                setname(data.data[0].name);
+                setrating(data.data[0].rating);
+                setprice(data.data[0].price);
+                setimg1(data.data[0].img1);
+                setimg2(data.data[0].img2);
+                setimg3(data.data[0].img3);
+                setimg4(data.data[0].img4);
+                settext(data.data[0].text);
+                setsku(data.data[0].sku);
+                setcatagories(data.data[0].catagories);
+                settag(data.data[0].tag);
+                setdescription1(data.data[0].description1);
+                setdescription2(data.data[0].description2);
+                setdescription3(data.data[0].description3);
+                setcustomer_review1(data.data[0].customer_review1);
+                setcustomer_review2(data.data[0].customer_review2);
+                setaddition_infomation1(data.data[0].addition_infomation1);
+                setaddition_infomation2(data.data[0].addition_infomation2);
+                setaddition_infomation3(data.data[0].addition_infomation3);
+              });
+      }
+      useEffect(() => {
+        fetchData();
+      },[])
+      let { id } = useParams();
+
+      const[ user1, setUser1] = useState([]);
+
+  const fetchData1 = () => {
+    return Axios.get("http://localhost:8081/api/product")
+          .then((response) => setUser1(response.data));
+  }
+
+  useEffect(() => {
+    fetchData1();
+  },[])
     return (
         <>
             {/* Page Preloder */}
@@ -59,25 +124,25 @@ const ShopDetails = () => {
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li class="nav-item">
                                         <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
-                                            <div class="product__thumb__pic set-bg" data-setbg="assets/img/shop-details/thumb-1.png">
+                                            <div class="product__thumb__pic set-bg" style={{backgroundImage: `url("${img1}") `}}>
                                             </div>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
-                                            <div class="product__thumb__pic set-bg" data-setbg="assets/img/shop-details/thumb-2.png">
+                                            <div class="product__thumb__pic set-bg" style={{backgroundImage: `url("${img2}") `}}>
                                             </div>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
-                                            <div class="product__thumb__pic set-bg" data-setbg="assets/img/shop-details/thumb-3.png">
+                                            <div class="product__thumb__pic set-bg" style={{backgroundImage: `url("${img3}") `}}>
                                             </div>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">
-                                            <div class="product__thumb__pic set-bg" data-setbg="assets/img/shop-details/thumb-4.png">
+                                            <div class="product__thumb__pic set-bg" style={{backgroundImage: `url("${img4}") `}}>
                                                 <i class="fa fa-play"></i>
                                             </div>
                                         </a>
@@ -88,22 +153,22 @@ const ShopDetails = () => {
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="tabs-1" role="tabpanel">
                                         <div class="product__details__pic__item">
-                                            <img src="assets/img/shop-details/product-big-2.png" alt="" />
+                                            <img src={img1} alt="" />
                                         </div>
                                     </div>
                                     <div class="tab-pane" id="tabs-2" role="tabpanel">
                                         <div class="product__details__pic__item">
-                                            <img src="assets/img/shop-details/product-big-3.png" alt="" />
+                                            <img src={img2} alt="" />
                                         </div>
                                     </div>
                                     <div class="tab-pane" id="tabs-3" role="tabpanel">
                                         <div class="product__details__pic__item">
-                                            <img src="assets/img/shop-details/product-big.png" alt="" />
+                                            <img src={img3} alt="" />
                                         </div>
                                     </div>
                                     <div class="tab-pane" id="tabs-4" role="tabpanel">
                                         <div class="product__details__pic__item">
-                                            <img src="assets/img/shop-details/product-big-4.png" alt="" />
+                                            <img src={img4} alt="" />
                                             <a href="https://www.youtube.com/watch?v=8PJ3_p7VqHw&list=RD8PJ3_p7VqHw&start_radio=1" class="video-popup"><i class="fa fa-play"></i></a>
                                         </div>
                                     </div>
@@ -117,19 +182,17 @@ const ShopDetails = () => {
                         <div class="row d-flex justify-content-center">
                             <div class="col-lg-8">
                                 <div class="product__details__text">
-                                    <h4>Hooded thermal anorak</h4>
+                                    <h4>{name}</h4>
                                     <div class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <span> - 5 Reviews</span>
+                                        <i class="fa fa-star"></i>&nbsp;
+                                        <i class="fa fa-star"> </i>&nbsp;
+                                        <i class="fa fa-star"> </i>&nbsp;
+                                        <i class="fa fa-star"> </i>&nbsp;
+                                        <i class="fa fa-star-o"> </i>&nbsp;
+                                        <span>{rating} review</span>
                                     </div>
-                                    <h3>$270.00 <span>70.00</span></h3>
-                                    <p>Coat with quilted lining and an adjustable hood. Featuring long sleeves with adjustable
-                                        cuff tabs, adjustable asymmetric hem with elastic side tabs and a front zip fastening
-                                        with placket.</p>
+                                    <h3>${price}</h3>
+                                    <p>{text}</p>
                                     <div class="product__details__option">
                                         <div class="product__details__option__size">
                                             <span>Size:</span>
@@ -181,9 +244,9 @@ const ShopDetails = () => {
                                         <h5><span>Guaranteed Safe Checkout</span></h5>
                                         <img src="assets/img/shop-details/details-payment.png" alt="" />
                                         <ul>
-                                            <li><span>SKU:</span> 3812912</li>
-                                            <li><span>Categories:</span> Clothes</li>
-                                            <li><span>Tag:</span> Clothes, Skin, Body</li>
+                                            <li><spam>SKU:        </spam>{sku}</li>
+                                            <li><spam>Catagories:      </spam>{catagories}</li>
+                                            <li><spam>Tag:       </spam>{tag}</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -209,35 +272,14 @@ const ShopDetails = () => {
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="tabs-5" role="tabpanel">
                                             <div class="product__details__tab__content">
-                                                <p class="note">Nam tempus turpis at metus scelerisque placerat nulla deumantos
-                                                    solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis
-                                                    ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo
-                                                    pharetras loremos.</p>
+                                                <p class="note">{description1}</p>
                                                 <div class="product__details__tab__content__item">
                                                     <h5>Products Infomation</h5>
-                                                    <p>A Pocket PC is a handheld computer, which features many of the same
-                                                        capabilities as a modern PC. These handy little devices allow
-                                                        individuals to retrieve and store e-mail messages, create a contact
-                                                        file, coordinate appointments, surf the internet, exchange text messages
-                                                        and more. Every product that is labeled as a Pocket PC must be
-                                                        accompanied with specific software to operate the unit and must feature
-                                                        a touchscreen and touchpad.</p>
-                                                    <p>As is the case with any new technology product, the cost of a Pocket PC
-                                                        was substantial during it’s early release. For approximately $700.00,
-                                                        consumers could purchase one of top-of-the-line Pocket PCs in 2003.
-                                                        These days, customers are finding that prices have become much more
-                                                        reasonable now that the newness is wearing off. For approximately
-                                                        $350.00, a new Pocket PC can now be purchased.</p>
+                                                    <p>{description2}</p>
                                                 </div>
                                                 <div class="product__details__tab__content__item">
                                                     <h5>Material used</h5>
-                                                    <p>Polyester is deemed lower quality due to its none natural quality’s. Made
-                                                        from synthetic materials, not natural like wool. Polyester suits become
-                                                        creased easily and are known for not being breathable. Polyester suits
-                                                        tend to have a shine to them compared to wool and cotton suits, this can
-                                                        make the suit look cheap. The texture of velvet is luxurious and
-                                                        breathable. Velvet is a great choice for dinner party jacket and can be
-                                                        worn all year round.</p>
+                                                    <p>{description3}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -245,63 +287,24 @@ const ShopDetails = () => {
                                             <div class="product__details__tab__content">
                                                 <div class="product__details__tab__content__item">
                                                     <h5>Products Infomation</h5>
-                                                    <p>A Pocket PC is a handheld computer, which features many of the same
-                                                        capabilities as a modern PC. These handy little devices allow
-                                                        individuals to retrieve and store e-mail messages, create a contact
-                                                        file, coordinate appointments, surf the internet, exchange text messages
-                                                        and more. Every product that is labeled as a Pocket PC must be
-                                                        accompanied with specific software to operate the unit and must feature
-                                                        a touchscreen and touchpad.</p>
-                                                    <p>As is the case with any new technology product, the cost of a Pocket PC
-                                                        was substantial during it’s early release. For approximately $700.00,
-                                                        consumers could purchase one of top-of-the-line Pocket PCs in 2003.
-                                                        These days, customers are finding that prices have become much more
-                                                        reasonable now that the newness is wearing off. For approximately
-                                                        $350.00, a new Pocket PC can now be purchased.</p>
+                                                    <p>{customer_review1}</p>
                                                 </div>
                                                 <div class="product__details__tab__content__item">
                                                     <h5>Material used</h5>
-                                                    <p>Polyester is deemed lower quality due to its none natural quality’s. Made
-                                                        from synthetic materials, not natural like wool. Polyester suits become
-                                                        creased easily and are known for not being breathable. Polyester suits
-                                                        tend to have a shine to them compared to wool and cotton suits, this can
-                                                        make the suit look cheap. The texture of velvet is luxurious and
-                                                        breathable. Velvet is a great choice for dinner party jacket and can be
-                                                        worn all year round.</p>
+                                                    <p>{customer_review2}</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="tab-pane" id="tabs-7" role="tabpanel">
                                             <div class="product__details__tab__content">
-                                                <p class="note">Nam tempus turpis at metus scelerisque placerat nulla deumantos
-                                                    solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis
-                                                    ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo
-                                                    pharetras loremos.</p>
+                                                <p class="note">{addition_infomation1}</p>
                                                 <div class="product__details__tab__content__item">
                                                     <h5>Products Infomation</h5>
-                                                    <p>A Pocket PC is a handheld computer, which features many of the same
-                                                        capabilities as a modern PC. These handy little devices allow
-                                                        individuals to retrieve and store e-mail messages, create a contact
-                                                        file, coordinate appointments, surf the internet, exchange text messages
-                                                        and more. Every product that is labeled as a Pocket PC must be
-                                                        accompanied with specific software to operate the unit and must feature
-                                                        a touchscreen and touchpad.</p>
-                                                    <p>As is the case with any new technology product, the cost of a Pocket PC
-                                                        was substantial during it’s early release. For approximately $700.00,
-                                                        consumers could purchase one of top-of-the-line Pocket PCs in 2003.
-                                                        These days, customers are finding that prices have become much more
-                                                        reasonable now that the newness is wearing off. For approximately
-                                                        $350.00, a new Pocket PC can now be purchased.</p>
+                                                    <p>{addition_infomation2}</p>
                                                 </div>
                                                 <div class="product__details__tab__content__item">
                                                     <h5>Material used</h5>
-                                                    <p>Polyester is deemed lower quality due to its none natural quality’s. Made
-                                                        from synthetic materials, not natural like wool. Polyester suits become
-                                                        creased easily and are known for not being breathable. Polyester suits
-                                                        tend to have a shine to them compared to wool and cotton suits, this can
-                                                        make the suit look cheap. The texture of velvet is luxurious and
-                                                        breathable. Velvet is a great choice for dinner party jacket and can be
-                                                        worn all year round.</p>
+                                                    <p>{addition_infomation3}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -323,144 +326,43 @@ const ShopDetails = () => {
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="http://localhost:8081/mf_img/product/product-1.jpg">
-                                    <span class="label">New</span>
-                                    <ul class="product__hover">
-                                        <li><a href="#"><img src="http://localhost:8081/mf_img/icon/heart.png" alt="" /></a></li>
-                                        <li><a href="#"><img src="http://localhost:8081/mf_img/icon/compare.png" alt="" /> <span>Compare</span></a></li>
-                                        <li><a href="#"><img src="http://localhost:8081/mf_img/icon/search.png" alt="" /></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6>Piqué Biker Jacket</h6>
-                                    <a href="#" class="add-cart">+ Add To Cart</a>
-                                    <div class="rating">
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div>
-                                    <h5>$67.24</h5>
-                                    <div class="product__color__select">
-                                        <label for="pc-1">
-                                            <input type="radio" id="pc-1" />
-                                        </label>
-                                        <label class="active black" for="pc-2">
-                                            <input type="radio" id="pc-2" />
-                                        </label>
-                                        <label class="grey" for="pc-3">
-                                            <input type="radio" id="pc-3" />
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="http://localhost:8081/mf_img/product/product-2.jpg">
-                                    <ul class="product__hover">
-                                        <li><a href="#"><img src="http://localhost:8081/mf_img/icon/heart.png" alt="" /></a></li>
-                                        <li><a href="#"><img src="http://localhost:8081/mf_img/icon/compare.png" alt="" /> <span>Compare</span></a></li>
-                                        <li><a href="#"><img src="http://localhost:8081/mf_img/icon/search.png" alt="" /></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6>Piqué Biker Jacket</h6>
-                                    <a href="#" class="add-cart">+ Add To Cart</a>
-                                    <div class="rating">
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div>
-                                    <h5>$67.24</h5>
-                                    <div class="product__color__select">
-                                        <label for="pc-4">
-                                            <input type="radio" id="pc-4" />
-                                        </label>
-                                        <label class="active black" for="pc-5">
-                                            <input type="radio" id="pc-5" />
-                                        </label>
-                                        <label class="grey" for="pc-6">
-                                            <input type="radio" id="pc-6" />
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
-                            <div class="product__item sale">
-                                <div class="product__item__pic set-bg" data-setbg="http://localhost:8081/mf_img/product/product-3.jpg">
-                                    <span class="label">Sale</span>
-                                    <ul class="product__hover">
-                                        <li><a href="#"><img src="http://localhost:8081/mf_img/icon/heart.png" alt="" /></a></li>
-                                        <li><a href="#"><img src="http://localhost:8081/mf_img/icon/compare.png" alt="" /> <span>Compare</span></a></li>
-                                        <li><a href="#"><img src="http://localhost:8081/mf_img/icon/search.png" alt="" /></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6>Multi-pocket Chest Bag</h6>
-                                    <a href="#" class="add-cart">+ Add To Cart</a>
-                                    <div class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div>
-                                    <h5>$43.48</h5>
-                                    <div class="product__color__select">
-                                        <label for="pc-7">
-                                            <input type="radio" id="pc-7" />
-                                        </label>
-                                        <label class="active black" for="pc-8">
-                                            <input type="radio" id="pc-8" />
-                                        </label>
-                                        <label class="grey" for="pc-9">
-                                            <input type="radio" id="pc-9" />
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="http://localhost:8081/mf_img/product/product-4.jpg">
-                                    <ul class="product__hover">
-                                        <li><a href="#"><img src="http://localhost:8081/mf_img/icon/heart.png" alt="" /></a></li>
-                                        <li><a href="#"><img src="http://localhost:8081/mf_img/icon/compare.png" alt="" /> <span>Compare</span></a></li>
-                                        <li><a href="#"><img src="http://localhost:8081/mf_img/icon/search.png" alt="" /></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6>Diagonal Textured Cap</h6>
-                                    <a href="#" class="add-cart">+ Add To Cart</a>
-                                    <div class="rating">
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </div>
-                                    <h5>$60.9</h5>
-                                    <div class="product__color__select">
-                                        <label for="pc-10">
-                                            <input type="radio" id="pc-10" />
-                                        </label>
-                                        <label class="active black" for="pc-11">
-                                            <input type="radio" id="pc-11" />
-                                        </label>
-                                        <label class="grey" for="pc-12">
-                                            <input type="radio" id="pc-12" />
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    {user1 && user1.length > 0 && user1.slice(0, 4).map((userObj, index) => (
+                   <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
+                   <div class="product__item">
+                     <div class="product__item__pic set-bg" style={{backgroundImage: `url("${userObj.img1}") `}}>
+                       <ul class="product__hover">
+                         <li><a href="#"><img src="http://localhost:8081/mf_img/icon/heart.png" alt="" /></a></li>
+                         <li><a href="#"><img src="http://localhost:8081/mf_img/icon/compare.png" alt="" /> <span>Compare</span></a>
+                         </li>
+                         <li><a href={`/shop-details/${userObj.id} `}><img src="http://localhost:8081/mf_img/icon/search.png" alt="" /></a></li>
+                       </ul>
+                     </div>
+                     <div class="product__item__text">
+                       <h6>{userObj.name}</h6>
+                       <a href="#" class="add-cart">+ Add To Cart</a>
+                       <div class="rating">
+                         <i class="fa fa-star-o"></i>&nbsp;
+                         <i class="fa fa-star-o"></i>&nbsp;
+                         <i class="fa fa-star-o"></i>&nbsp;
+                         <i class="fa fa-star-o"></i>&nbsp;
+                         <i class="fa fa-star-o"></i>&nbsp;
+                       </div>
+                       <h5>${userObj.price}</h5>
+                       <div class="product__color__select">
+                         <label for="pc-4">
+                           <input type="radio" id="pc-4" />
+                         </label>
+                         <label class="active black" for="pc-5">
+                           <input type="radio" id="pc-5" />
+                         </label>
+                         <label class="grey" for="pc-6">
+                           <input type="radio" id="pc-6" />
+                         </label>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+                 ))}
                     </div>
                 </div>
             </section>

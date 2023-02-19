@@ -14,6 +14,52 @@ const Home = () => {
 
   let navigate = useNavigate();
 
+  const [heroList, setHeroList] = useState([]);
+  const [bannerList, setBannerList] = useState([]);
+  // const [productsList, setProductsList] = useState([]);
+  const [instagramList, setInstagramList] = useState([]);
+  // const [blogList, setBlogList] = useState([]);
+
+  // get hero item slider
+  useEffect(() => {
+    Axios.get("http://localhost:8081/api/heroitem").then((data) => {
+      console.log(data)
+      setHeroList(data.data)
+    });
+  }, []);
+
+  // get banner item
+  useEffect(() => {
+    Axios.get("http://localhost:8081/api/banneritem").then((data) => {
+      console.log(data)
+      setBannerList(data.data)
+    });
+  }, []);
+
+  // 8 Products
+  // useEffect(() => {
+  //   Axios.get("http://localhost:8081/api/getProducts").then((data) => {
+  //     console.log(data)
+  //     setProductsList(data.data)
+  //   });
+  // }, []);
+
+  // get all instagram
+  useEffect(() => {
+    Axios.get("http://localhost:8081/api/instagram").then((data) => {
+      console.log(data)
+      setInstagramList(data.data)
+    });
+  }, []);
+
+  // latest blog
+  // useEffect(() => {
+  //   Axios.get("http://localhost:8081/api/getBlog").then((data) => {
+  //     console.log(data)
+  //     setBlogList(data.data)
+  //   });
+  // }, []);
+
   return (
     <>
       {/* Page Preloder */}
@@ -32,16 +78,15 @@ const Home = () => {
       {/* Hero Section Begin */}
       <section class="hero">
         <div class="hero__slider owl-carousel">
-          <div class="hero__items set-bg" data-setbg="http://localhost:8081/mf_img/hero/hero-1.jpg">
+          <div class="hero__items set-bg" style={{ backgroundImage: `url(${heroList[0]?.h_image})` }}>
             <div class="container">
               <div class="row">
                 <div class="col-xl-5 col-lg-7 col-md-8">
                   <div class="hero__text">
-                    <h6>Summer Collection</h6>
-                    <h2>Fall - Winter Collections 2030</h2>
-                    <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
-                      commitment to exceptional quality.</p>
-                    <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                    <h6>{heroList[0]?.h_type}</h6>
+                    <h2>{heroList[0]?.h_name}</h2>
+                    <p>{heroList[0]?.h_text}</p>
+                    <a href={`${heroList[0]?.h_link}`} class="primary-btn">Shop now <span class="arrow_right"></span></a>
                     <div class="hero__social">
                       <a href="#"><i class="fa fa-facebook"></i></a>
                       <a href="#"><i class="fa fa-twitter"></i></a>
@@ -53,7 +98,27 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div class="hero__items set-bg" data-setbg="http://localhost:8081/mf_img/hero/hero-2.jpg">
+          <div class="hero__items set-bg" style={{ backgroundImage: `url(${heroList[1]?.h_image})` }}>
+            <div class="container">
+              <div class="row">
+                <div class="col-xl-5 col-lg-7 col-md-8">
+                  <div class="hero__text">
+                    <h6>{heroList[1]?.h_type}</h6>
+                    <h2>{heroList[1]?.h_name}</h2>
+                    <p>{heroList[1]?.h_text}</p>
+                    <a href={`${heroList[1]?.h_link}`} class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                    <div class="hero__social">
+                      <a href="#"><i class="fa fa-facebook"></i></a>
+                      <a href="#"><i class="fa fa-twitter"></i></a>
+                      <a href="#"><i class="fa fa-pinterest"></i></a>
+                      <a href="#"><i class="fa fa-instagram"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero__items set-bg" style={{ backgroundImage: `url(${heroList[2]?.h_image})` }}>
             <div class="container">
               <div class="row">
                 <div class="col-xl-5 col-lg-7 col-md-8">
@@ -62,7 +127,7 @@ const Home = () => {
                     <h2>Fall - Winter Collections 2030</h2>
                     <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
                       commitment to exceptional quality.</p>
-                    <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                    <a href="/shop" class="primary-btn">Shop now <span class="arrow_right"></span></a>
                     <div class="hero__social">
                       <a href="#"><i class="fa fa-facebook"></i></a>
                       <a href="#"><i class="fa fa-twitter"></i></a>
@@ -85,33 +150,33 @@ const Home = () => {
             <div class="col-lg-7 offset-lg-4">
               <div class="banner__item">
                 <div class="banner__item__pic">
-                  <img src="http://localhost:8081/mf_img/banner/banner-1.jpg" alt="" />
+                  <img src={bannerList[0]?.b_image} alt={bannerList[0]?.b_name} />
                 </div>
                 <div class="banner__item__text">
-                  <h2>Clothing Collections 2030</h2>
-                  <a href="#">Shop now</a>
+                  <h2>{bannerList[0]?.b_name}</h2>
+                  <a href={bannerList[0]?.b_link}>Shop now</a>
                 </div>
               </div>
             </div>
             <div class="col-lg-5">
               <div class="banner__item banner__item--middle">
                 <div class="banner__item__pic">
-                  <img src="http://localhost:8081/mf_img/banner/banner-2.jpg" alt="" />
+                  <img src={bannerList[1]?.b_image} alt={bannerList[1]?.b_name} />
                 </div>
                 <div class="banner__item__text">
-                  <h2>Accessories</h2>
-                  <a href="#">Shop now</a>
+                  <h2>{bannerList[1]?.b_name}</h2>
+                  <a href={bannerList[1]?.b_link}>Shop now</a>
                 </div>
               </div>
             </div>
             <div class="col-lg-7">
               <div class="banner__item banner__item--last">
                 <div class="banner__item__pic">
-                  <img src="http://localhost:8081/mf_img/banner/banner-3.jpg" alt="" />
+                  <img src={bannerList[2]?.b_image} alt={bannerList[2]?.b_name} />
                 </div>
                 <div class="banner__item__text">
-                  <h2>Shoes Spring 2030</h2>
-                  <a href="#">Shop now</a>
+                  <h2>{bannerList[2]?.b_name}</h2>
+                  <a href={bannerList[2]?.b_link}>Shop now</a>
                 </div>
               </div>
             </div>
@@ -467,20 +532,19 @@ const Home = () => {
           <div class="row">
             <div class="col-lg-8">
               <div class="instagram__pic">
-                <div class="instagram__pic__item set-bg" data-setbg="http://localhost:8081/mf_img/instagram/instagram-1.jpg"></div>
-                <div class="instagram__pic__item set-bg" data-setbg="http://localhost:8081/mf_img/instagram/instagram-2.jpg"></div>
-                <div class="instagram__pic__item set-bg" data-setbg="http://localhost:8081/mf_img/instagram/instagram-3.jpg"></div>
-                <div class="instagram__pic__item set-bg" data-setbg="http://localhost:8081/mf_img/instagram/instagram-4.jpg"></div>
-                <div class="instagram__pic__item set-bg" data-setbg="http://localhost:8081/mf_img/instagram/instagram-5.jpg"></div>
-                <div class="instagram__pic__item set-bg" data-setbg="http://localhost:8081/mf_img/instagram/instagram-6.jpg"></div>
+                <div class="instagram__pic__item set-bg" style={{ backgroundImage: `url(${instagramList[0]?.inst_image_1})` }}></div>
+                <div class="instagram__pic__item set-bg" style={{ backgroundImage: `url(${instagramList[0]?.inst_image_2})` }}></div>
+                <div class="instagram__pic__item set-bg" style={{ backgroundImage: `url(${instagramList[0]?.inst_image_3})` }}></div>
+                <div class="instagram__pic__item set-bg" style={{ backgroundImage: `url(${instagramList[0]?.inst_image_4})` }}></div>
+                <div class="instagram__pic__item set-bg" style={{ backgroundImage: `url(${instagramList[0]?.inst_image_5})` }}></div>
+                <div class="instagram__pic__item set-bg" style={{ backgroundImage: `url(${instagramList[0]?.inst_image_6})` }}></div>
               </div>
             </div>
             <div class="col-lg-4">
               <div class="instagram__text">
-                <h2>Instagram</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                  labore et dolore magna aliqua.</p>
-                <h3>#Male_Fashion</h3>
+                <h2>{instagramList[0]?.inst_name}</h2>
+                <p>{instagramList[0]?.inst_text}</p>
+                <h3>{instagramList[0]?.inst_link}</h3>
               </div>
             </div>
           </div>

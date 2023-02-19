@@ -57,10 +57,10 @@ const Header = () => {
                 <li><a href="#">Pages</a>
                   <ul class="dropdown">
                     <li><a href="/about">About Us</a></li>
-                    <li><a href="/shop-details">Shop Details</a></li>
+                    {/* <li><a href="/shop-details">Shop Details</a></li> */}
                     <li><a href="/shoping-cart">Shopping Cart</a></li>
                     <li><a href="/checkout">Check Out</a></li>
-                    <li><a href="/blog-details">Blog Details</a></li>
+                    {/* <li><a href="/blog-details">Blog Details</a></li> */}
                   </ul>
                 </li>
                 <li className={splitLocation[1] === "blog" ? "active" : ""}><a href="/blog">Blog</a></li>

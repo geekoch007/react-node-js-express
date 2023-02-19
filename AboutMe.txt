@@ -1,0 +1,104 @@
+/* ######################### */
+/* ## Package Of Template ## */
+/* ######################### */
+1. Admin(react-js)
+  - install react js
+  - npm install react-router-dom
+  - npm install axios
+  - npm install tailwind-css
+
+2. Client(react-js)
+  - install react js
+  - npm install react-router-dom
+  - npm install axios
+  - npm install bootstrap-css
+  - npm install jquery
+  - added assets for user-template(css/js/jquery)
+
+3. Server(node-js)
+  - npm init 
+  - npm install express 
+  - npm install mysql 
+  - npm install cors 
+
+4. Image 
+  - storage on server(node-js)
+
+/* ######################### */
+/* ##### Create Table ###### */    
+/* ######################### */
+
+/* ######################### */
+/* ##### Lon Chanhta ####### */    
+/* ######################### */
+1. create table hero_item(slider)
+  - h_id
+  - h_name
+  - h_type
+  - h_image
+  - h_text
+  - h_link
+  - published
+  - createdAt
+  - updatedAt
+
+2. create table banner_item
+  - b_id
+  - b_name
+  - b_image
+  - b_link
+  - published
+  - createdAt
+  - updatedAt
+
+3. create table instagram
+  - inst_id
+  - inst_name
+  - inst_image_1
+  - inst_image_2
+  - inst_image_3
+  - inst_image_4
+  - inst_image_5
+  - inst_image_6
+  - inst_text
+  - inst_link
+  - published
+  - createdAt
+  - updatedAt
+
+/* ######################### */
+/* ##### Sa Khorteat ####### */    
+/* ######################### */
+1. create table shops
+  - id
+
+  - enable
+  - createdAt
+  - updatedAt
+
+/* ######################### */
+/* ### Keo Titsophearom #### */    
+/* ######################### */
+1. create table blogs
+  - id
+
+  - enable
+  - createdAt
+  - updatedAt
+
+/* ######################### */
+/* ####### Kem Vann ######## */    
+/* ######################### */
+1. create table contact
+  - id
+
+  - enable
+  - createdAt
+  - updatedAt
+
+2. create table about
+  - id
+
+  - enable
+  - createdAt
+  - updatedAt

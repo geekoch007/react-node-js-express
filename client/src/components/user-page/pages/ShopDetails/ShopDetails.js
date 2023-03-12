@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './shop-details.css';
-import 'assets/css/bootstrap.min.css';
-import 'assets/css/elegant-icons.css';
-import 'assets/css/font-awesome.min.css';
-import 'assets/css/style.css';
-import 'assets/css/style.css.map';
-import Axios from 'axios';
+
+// import 'assets/css/bootstrap.min.css';
+// import 'assets/css/elegant-icons.css';
+// import 'assets/css/font-awesome.min.css';
+// import 'assets/css/style.css';
+// import 'assets/css/style.css.map';
+
 import $ from 'jquery';
 import Menu from '../../Imports/Menu';
 import Header from '../../Imports/Header';

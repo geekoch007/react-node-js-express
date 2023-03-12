@@ -39,18 +39,18 @@ function BlogNew() {
         <div>
             <form onSubmit={formSubmit}>
 
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Title</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" name="title" value={formData?.title} onChange={updateInput} />
-                    <div id="emailHelp" class="form-text">Title need text.</div>
+                <div className="mb-3">
+                    <label for="exampleInputEmail1" className="form-label">Title</label>
+                    <input type="text" className="form-control" id="exampleInputEmail1" name="title" value={formData?.title} onChange={updateInput} />
+                    <div id="emailHelp" className="form-text">Title need text.</div>
                 </div>
 
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Date</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" name="date" value={formData?.date} onChange={updateInput} />
+                <div className="mb-3">
+                    <label for="exampleInputPassword1" className="form-label">Date</label>
+                    <input type="text" className="form-control" id="exampleInputPassword1" name="date" value={formData?.date} onChange={updateInput} />
                 </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary">Submit</button>
             </form>
         </div>
     )

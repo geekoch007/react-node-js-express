@@ -26,110 +26,110 @@ const Shop = () => {
       {/* end navbar */}
 
       {/* <!-- strat wrapper --> */}
-      <div class="h-screen flex flex-row flex-wrap">
+      <div className="h-screen flex flex-row flex-wrap">
 
         {/* <!-- start sidebar --> */}
         <Sidebar />
         {/* <!-- end sidbar --> */}
 
         {/* <!-- strat content --> */}
-        <div class="bg-gray-100 flex-1 p-6 md:mt-16">
+        <div className="bg-gray-100 flex-1 p-6 md:mt-16">
 
           {/* <!-- best seller & traffic --> */}
-          <div class="grid grid-cols-1 lg:grid-cols-1 gap-5 mt-2">
-            <div class="card">
+          <div className="grid grid-cols-1 lg:grid-cols-1 gap-5 mt-2">
+            <div className="card">
 
-              <div class="card-body">
-                <div class="flex flex-row justify-between items-center">
-                  <h1 class="font-extrabold text-lg">shop</h1>
-                  <a href="#" class="btn-gray text-sm">Add New</a>
+              <div className="card-body">
+                <div className="flex flex-row justify-between items-center">
+                  <h1 className="font-extrabold text-lg">shop</h1>
+                  <a href="#" className="btn-gray text-sm">Add New</a>
                 </div>
 
-                <div class="flex flex-col overflow-x-auto">
-                  <div class="sm:-mx-2 lg:-mx-2">
-                    <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-                      <div class="overflow-x-auto">
+                <div className="flex flex-col overflow-x-auto">
+                  <div className="sm:-mx-2 lg:-mx-2">
+                    <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                      <div className="overflow-x-auto">
                         {/* <!-- start a table --> */}
-                        <table class="table-fixed mt-5 min-w-full">
+                        <table className="table-fixed mt-5 min-w-full">
 
                           {/* <!-- table head --> */}
-                          <thead class="text-left">
+                          <thead className="text-left">
                             <tr>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">Price&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">Rating&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">Link&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">Img1</th>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">Img2</th>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">Img3</th>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">Img4</th>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">Text&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">Size</th>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">Color</th>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">SKU</th>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">Catagories&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">Tag</th>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">Description1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">Description2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">Description3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">Customer_review1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">Customer_review2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">Addition_infomation1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">Addition_infomation2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">Addition_infomation3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">Shop_order&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">Enable&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">CreatedAt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">UpdatedAt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                              <th class="pb-10 text-sm font-extrabold tracking-wide">Action&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">Price&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">Rating&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">Link&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">Img1</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">Img2</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">Img3</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">Img4</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">Text&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">Size</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">Color</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">SKU</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">Catagories&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">Tag</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">Description1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">Description2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">Description3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">Customer_review1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">Customer_review2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">Addition_infomation1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">Addition_infomation2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">Addition_infomation3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">Shop_order&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">Enable&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">CreatedAt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">UpdatedAt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                              <th className="pb-10 text-sm font-extrabold tracking-wide">Action&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                             </tr>
                           </thead>
                           {/* <!-- end table head --> */}
 
                           {/* <!-- table body --> */}
-                          <tbody class="text-left text-gray-600">
+                          <tbody className="text-left text-gray-600">
 
 
                             {/* <!-- item --> */}
                             {user && user.length > 0 && user.map((userObj, index) => (
                               <tr>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">{userObj.id}</th>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">{userObj.price}</th>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">{userObj.name}</th>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">{userObj.rating}</th>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">{userObj.link}</th>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">{userObj.img1}</th>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">{userObj.img2}</th>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">{userObj.img3}</th>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">{userObj.img4}</th>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">{userObj.text.substring(0, 25)}</th>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">{userObj.size}</th>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">{userObj.color}</th>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">{userObj.sku}</th>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">{userObj.catagories}</th>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">{userObj.tag}</th>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">{userObj.description1.substring(0, 25)}</th>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">{userObj.description2.substring(0, 25)}</th>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">{userObj.description3.substring(0, 25)}</th>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">{userObj.customer_review1.substring(0, 25)}</th>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">{userObj.customer_review2.substring(0, 25)}</th>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">{userObj.addition_infomation1.substring(0, 25)}</th>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">{userObj.addition_infomation2.substring(0, 25)}</th>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">{userObj.addition_infomation3.substring(0, 25)}</th>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">{userObj.shop_order}</th>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">{userObj.enable}</th>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">{formatDate(userObj.createdAt)}</th>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">{formatDate(userObj.updatedAt)}</th>
-                                <th class="mb-4 text-xs font-extrabold tracking-wider">
-                                  <a href="" class="mb-3 capitalize font-medium text-sm hover:text-teal-700 transition ease-in-out duration-500">
-                                    <i class="fa-solid fa-eye text-xs mr-2"></i>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">{userObj.id}</th>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">{userObj.price}</th>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">{userObj.name}</th>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">{userObj.rating}</th>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">{userObj.link}</th>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">{userObj.img1}</th>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">{userObj.img2}</th>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">{userObj.img3}</th>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">{userObj.img4}</th>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">{userObj.text.substring(0, 25)}</th>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">{userObj.size}</th>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">{userObj.color}</th>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">{userObj.sku}</th>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">{userObj.catagories}</th>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">{userObj.tag}</th>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">{userObj.description1.substring(0, 25)}</th>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">{userObj.description2.substring(0, 25)}</th>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">{userObj.description3.substring(0, 25)}</th>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">{userObj.customer_review1.substring(0, 25)}</th>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">{userObj.customer_review2.substring(0, 25)}</th>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">{userObj.addition_infomation1.substring(0, 25)}</th>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">{userObj.addition_infomation2.substring(0, 25)}</th>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">{userObj.addition_infomation3.substring(0, 25)}</th>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">{userObj.shop_order}</th>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">{userObj.enable}</th>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">{formatDate(userObj.createdAt)}</th>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">{formatDate(userObj.updatedAt)}</th>
+                                <th className="mb-4 text-xs font-extrabold tracking-wider">
+                                  <a href="" className="mb-3 capitalize font-medium text-sm hover:text-teal-700 transition ease-in-out duration-500">
+                                    <i className="fa-solid fa-eye text-xs mr-2"></i>
                                   </a>
-                                  <a href="" class="mb-3 capitalize font-medium text-sm hover:text-teal-700 transition ease-in-out duration-500">
-                                    <i class="fa-solid fa-pen-to-square text-xs mr-2"></i>
+                                  <a href="" className="mb-3 capitalize font-medium text-sm hover:text-teal-700 transition ease-in-out duration-500">
+                                    <i className="fa-solid fa-pen-to-square text-xs mr-2"></i>
                                   </a>
-                                  <a href="" class="mb-3 capitalize font-medium text-sm hover:text-teal-700 transition ease-in-out duration-500">
-                                    <i class="fa-solid fa-trash text-xs mr-2"></i>
+                                  <a href="" className="mb-3 capitalize font-medium text-sm hover:text-teal-700 transition ease-in-out duration-500">
+                                    <i className="fa-solid fa-trash text-xs mr-2"></i>
                                   </a>
                                 </th>
                               </tr>

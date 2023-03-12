@@ -11,7 +11,7 @@ const BlogDetails = () => {
     <>
       {/* Page Preloder */}
       <div id="preloder">
-        <div class="loader"></div>
+        <div className="loader"></div>
       </div>
 
       {/* Offcanvas Menu Begin */}
@@ -23,11 +23,11 @@ const BlogDetails = () => {
       {/* Header Section End  */}
 
       {/* Blog Details Hero Begin */}
-      <section class="blog-hero spad">
-        <div class="container">
-          <div class="row d-flex justify-content-center">
-            <div class="col-lg-9 text-center">
-              <div class="blog__hero__text">
+      <section className="blog-hero spad">
+        <div className="container">
+          <div className="row d-flex justify-content-center">
+            <div className="col-lg-9 text-center">
+              <div className="blog__hero__text">
                 <h2>Are you one of the thousands of Iphone owners who has no idea</h2>
                 <ul>
                   <li>By Deercreative</li>
@@ -42,26 +42,26 @@ const BlogDetails = () => {
       {/* Blog Details Hero End  */}
 
       {/* Blog Details Section Begin */}
-      <section class="blog-details spad">
-        <div class="container">
-          <div class="row d-flex justify-content-center">
-            <div class="col-lg-12">
-              <div class="blog__details__pic">
+      <section className="blog-details spad">
+        <div className="container">
+          <div className="row d-flex justify-content-center">
+            <div className="col-lg-12">
+              <div className="blog__details__pic">
                 <img src="http://localhost:8081/mf_img//blog/details/blog-details.jpg" alt="" />
               </div>
             </div>
-            <div class="col-lg-8">
-              <div class="blog__details__content">
-                <div class="blog__details__share">
+            <div className="col-lg-8">
+              <div className="blog__details__content">
+                <div className="blog__details__share">
                   <span>share</span>
                   <ul>
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#" class="youtube"><i class="fa fa-youtube-play"></i></a></li>
-                    <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#"><i className="fa fa-facebook"></i></a></li>
+                    <li><a href="#" className="twitter"><i className="fa fa-twitter"></i></a></li>
+                    <li><a href="#" className="youtube"><i className="fa fa-youtube-play"></i></a></li>
+                    <li><a href="#" className="linkedin"><i className="fa fa-linkedin"></i></a></li>
                   </ul>
                 </div>
-                <div class="blog__details__text">
+                <div className="blog__details__text">
                   <p>Hydroderm is the highly desired anti-aging cream on the block. This serum restricts the
                     occurrence of early aging sings on the skin and keeps the skin younger, tighter and
                     healthier. It reduces the wrinkles and loosening of skin. This cream nourishes the skin
@@ -72,13 +72,13 @@ const BlogDetails = () => {
                     effect on the skin. The other important ingredient, making hydroderm so effective is
                     “marine collagen” which along with Vyo-Serum helps revitalize the skin.</p>
                 </div>
-                <div class="blog__details__quote">
-                  <i class="fa fa-quote-left"></i>
+                <div className="blog__details__quote">
+                  <i className="fa fa-quote-left"></i>
                   <p>“When designing an advertisement for a particular product many things should be
                     researched like where it should be displayed.”</p>
                   <h6>_ John Smith _</h6>
                 </div>
-                <div class="blog__details__text">
+                <div className="blog__details__text">
                   <p>Vyo-Serum along with tightening the skin also reduces the fine lines indicating aging of
                     skin. Problems like dark circles, puffiness, and crow’s feet can be control from the
                     strong effects of this serum.</p>
@@ -87,20 +87,20 @@ const BlogDetails = () => {
                     the pores clog, nevertheless also let’s sweeps out the wrinkles and all signs of aging
                     from the sensitive near the eyes.</p>
                 </div>
-                <div class="blog__details__option">
-                  <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                      <div class="blog__details__author">
-                        <div class="blog__details__author__pic">
+                <div className="blog__details__option">
+                  <div className="row">
+                    <div className="col-lg-6 col-md-6 col-sm-6">
+                      <div className="blog__details__author">
+                        <div className="blog__details__author__pic">
                           <img src="http://localhost:8081/mf_img//blog/details/blog-author.jpg" alt="" />
                         </div>
-                        <div class="blog__details__author__text">
+                        <div className="blog__details__author__text">
                           <h5>Aiden Blair</h5>
                         </div>
                       </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                      <div class="blog__details__tags">
+                    <div className="col-lg-6 col-md-6 col-sm-6">
+                      <div className="blog__details__tags">
                         <a href="#">#Fashion</a>
                         <a href="#">#Trending</a>
                         <a href="#">#2020</a>
@@ -108,38 +108,38 @@ const BlogDetails = () => {
                     </div>
                   </div>
                 </div>
-                <div class="blog__details__btns">
-                  <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                      <a href="" class="blog__details__btns__item">
-                        <p><span class="arrow_left"></span> Previous Pod</p>
+                <div className="blog__details__btns">
+                  <div className="row">
+                    <div className="col-lg-6 col-md-6 col-sm-6">
+                      <a href="" className="blog__details__btns__item">
+                        <p><span className="arrow_left"></span> Previous Pod</p>
                         <h5>It S Classified How To Utilize Free Classified Ad Sites</h5>
                       </a>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                      <a href="" class="blog__details__btns__item blog__details__btns__item--next">
-                        <p>Next Pod <span class="arrow_right"></span></p>
+                    <div className="col-lg-6 col-md-6 col-sm-6">
+                      <a href="" className="blog__details__btns__item blog__details__btns__item--next">
+                        <p>Next Pod <span className="arrow_right"></span></p>
                         <h5>Tips For Choosing The Perfect Gloss For Your Lips</h5>
                       </a>
                     </div>
                   </div>
                 </div>
-                <div class="blog__details__comment">
+                <div className="blog__details__comment">
                   <h4>Leave A Comment</h4>
                   <form action="#">
-                    <div class="row">
-                      <div class="col-lg-4 col-md-4">
+                    <div className="row">
+                      <div className="col-lg-4 col-md-4">
                         <input type="text" placeholder="Name" />
                       </div>
-                      <div class="col-lg-4 col-md-4">
+                      <div className="col-lg-4 col-md-4">
                         <input type="text" placeholder="Email" />
                       </div>
-                      <div class="col-lg-4 col-md-4">
+                      <div className="col-lg-4 col-md-4">
                         <input type="text" placeholder="Phone" />
                       </div>
-                      <div class="col-lg-12 text-center">
+                      <div className="col-lg-12 text-center">
                         <textarea placeholder="Comment"></textarea>
-                        <button type="submit" class="site-btn">Post Comment</button>
+                        <button type="submit" className="site-btn">Post Comment</button>
                       </div>
                     </div>
                   </form>
@@ -156,10 +156,10 @@ const BlogDetails = () => {
       {/* Footer Section End  */}
 
       {/* Search Begin */}
-      <div class="search-model">
-        <div class="h-100 d-flex align-items-center justify-content-center">
-          <div class="search-close-switch">+</div>
-          <form class="search-model-form">
+      <div className="search-model">
+        <div className="h-100 d-flex align-items-center justify-content-center">
+          <div className="search-close-switch">+</div>
+          <form className="search-model-form">
             <input type="text" id="search-input" placeholder="Search here....." />
           </form>
         </div>

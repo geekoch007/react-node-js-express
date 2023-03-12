@@ -76,7 +76,7 @@ setTimeout(function () {
     items: 1,
     dots: false,
     nav: true,
-    navText: ["<span class='arrow_left'><span/>", "<span class='arrow_right'><span/>"],
+    navText: ["<span className='arrow_left'><span/>", "<span className='arrow_right'><span/>"],
     animateOut: 'fadeOut',
     animateIn: 'fadeIn',
     smartSpeed: 1200,
@@ -134,7 +134,7 @@ setTimeout(function () {
   /* var timerdate = "2020/12/30" */
 
   $("#countdown").countdown(timerdate, function (event) {
-    $(this).html(event.strftime("<div class='cd-item'><span>%D</span> <p>Days</p> </div>" + "<div class='cd-item'><span>%H</span> <p>Hours</p> </div>" + "<div class='cd-item'><span>%M</span> <p>Minutes</p> </div>" + "<div class='cd-item'><span>%S</span> <p>Seconds</p> </div>"));
+    $(this).html(event.strftime("<div className='cd-item'><span>%D</span> <p>Days</p> </div>" + "<div className='cd-item'><span>%H</span> <p>Hours</p> </div>" + "<div className='cd-item'><span>%M</span> <p>Minutes</p> </div>" + "<div className='cd-item'><span>%S</span> <p>Seconds</p> </div>"));
   });
 
   /*------------------
@@ -148,8 +148,8 @@ setTimeout(function () {
       Quantity change
   --------------------- */
   var proQty = $('.pro-qty');
-  proQty.prepend('<span class="fa fa-angle-up dec qtybtn"></span>');
-  proQty.append('<span class="fa fa-angle-down inc qtybtn"></span>');
+  proQty.prepend('<span className="fa fa-angle-up dec qtybtn"></span>');
+  proQty.append('<span className="fa fa-angle-down inc qtybtn"></span>');
   proQty.on('click', '.qtybtn', function () {
     var $button = $(this);
     var oldValue = $button.parent().find('input').val();
@@ -167,8 +167,8 @@ setTimeout(function () {
   });
 
   var proQty = $('.pro-qty-2');
-  proQty.prepend('<span class="fa fa-angle-left dec qtybtn"></span>');
-  proQty.append('<span class="fa fa-angle-right inc qtybtn"></span>');
+  proQty.prepend('<span className="fa fa-angle-left dec qtybtn"></span>');
+  proQty.append('<span className="fa fa-angle-right inc qtybtn"></span>');
   proQty.on('click', '.qtybtn', function () {
     var $button = $(this);
     var oldValue = $button.parent().find('input').val();

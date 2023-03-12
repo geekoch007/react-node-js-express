@@ -3,15 +3,15 @@ import React from 'react';
 const Menu = () => {
   return (
     <>
-      <div class="offcanvas-menu-overlay"></div>
-      <div class="offcanvas-menu-wrapper">
-        <div class="offcanvas__option">
-          <div class="offcanvas__links">
+      <div className="offcanvas-menu-overlay"></div>
+      <div className="offcanvas-menu-wrapper">
+        <div className="offcanvas__option">
+          <div className="offcanvas__links">
             <a href="#">Sign in</a>
             <a href="#">FAQs</a>
           </div>
-          <div class="offcanvas__top__hover">
-            <span>Usd <i class="arrow_carrot-down"></i></span>
+          <div className="offcanvas__top__hover">
+            <span>Usd <i className="arrow_carrot-down"></i></span>
             <ul>
               <li>USD</li>
               <li>EUR</li>
@@ -19,14 +19,14 @@ const Menu = () => {
             </ul>
           </div>
         </div>
-        <div class="offcanvas__nav__option">
-          <a href="#" class="search-switch"><img src="http://localhost:8081/mf_img/icon/search.png" alt="" /></a>
+        <div className="offcanvas__nav__option">
+          <a href="#" className="search-switch"><img src="http://localhost:8081/mf_img/icon/search.png" alt="" /></a>
           <a href="#"><img src="http://localhost:8081/mf_img/icon/heart.png" alt="" /></a>
           <a href="#"><img src="http://localhost:8081/mf_img/icon/cart.png" alt="" /> <span>0</span></a>
-          <div class="price">$0.00</div>
+          <div className="price">$0.00</div>
         </div>
         <div id="mobile-menu-wrap"></div>
-        <div class="offcanvas__text">
+        <div className="offcanvas__text">
           <p>Free shipping, 30-day return or refund guarantee.</p>
         </div>
       </div>

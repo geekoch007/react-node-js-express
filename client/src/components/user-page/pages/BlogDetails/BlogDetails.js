@@ -60,7 +60,7 @@ const BlogDetails = () => {
     <>
       {/* Page Preloder */}
       <div id="preloder">
-        <div class="loader"></div>
+        <div className="loader"></div>
       </div>
 
       {/* Offcanvas Menu Begin */}
@@ -72,11 +72,11 @@ const BlogDetails = () => {
       {/* Header Section End  */}
 
       {/* Blog Details Hero Begin */}
-      <section class="blog-hero spad">
-        <div class="container">
-          <div class="row d-flex justify-content-center">
-            <div class="col-lg-9 text-center">
-              <div class="blog__hero__text">
+      <section className="blog-hero spad">
+        <div className="container">
+          <div className="row d-flex justify-content-center">
+            <div className="col-lg-9 text-center">
+              <div className="blog__hero__text">
                 <h2>{title}</h2>
                 <ul>
                   <li>by {auther}</li>
@@ -91,52 +91,52 @@ const BlogDetails = () => {
       {/* Blog Details Hero End  */}
 
       {/* Blog Details Section Begin */}
-      <section class="blog-details spad">
-        <div class="container">
-          <div class="row d-flex justify-content-center">
-            <div class="col-lg-12">
-              <div class="blog__details__pic">
+      <section className="blog-details spad">
+        <div className="container">
+          <div className="row d-flex justify-content-center">
+            <div className="col-lg-12">
+              <div className="blog__details__pic">
                 <img src={img} alt="" />
               </div>
             </div>
-            <div class="col-lg-8">
-              <div class="blog__details__content">
-                <div class="blog__details__share">
+            <div className="col-lg-8">
+              <div className="blog__details__content">
+                <div className="blog__details__share">
                   <span>share</span>
                   <ul>
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#" class="youtube"><i class="fa fa-youtube-play"></i></a></li>
-                    <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#"><i className="fa fa-facebook"></i></a></li>
+                    <li><a href="#" className="twitter"><i className="fa fa-twitter"></i></a></li>
+                    <li><a href="#" className="youtube"><i className="fa fa-youtube-play"></i></a></li>
+                    <li><a href="#" className="linkedin"><i className="fa fa-linkedin"></i></a></li>
                   </ul>
                 </div>
-                <div class="blog__details__text">
+                <div className="blog__details__text">
                   <p>{description1}</p>
                   <p>{description2}</p>
                 </div>
-                <div class="blog__details__quote">
-                  <i class="fa fa-quote-left"></i>
+                <div className="blog__details__quote">
+                  <i className="fa fa-quote-left"></i>
                   <p>{note}</p>
                   <h6>_ {auther} _</h6>
                 </div>
-                <div class="blog__details__text">
+                <div className="blog__details__text">
                   <p>{description3}</p>
                   <p>{description4}</p>
                 </div>
-                <div class="blog__details__option">
-                  <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                      <div class="blog__details__author">
-                        <div class="blog__details__author__pic">
+                <div className="blog__details__option">
+                  <div className="row">
+                    <div className="col-lg-6 col-md-6 col-sm-6">
+                      <div className="blog__details__author">
+                        <div className="blog__details__author__pic">
                           <img src={auther_img} alt="" />
                         </div>
-                        <div class="blog__details__author__text">
+                        <div className="blog__details__author__text">
                           <h5>{auther}</h5>
                         </div>
                       </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                      <div class="blog__details__tags">
+                    <div className="col-lg-6 col-md-6 col-sm-6">
+                      <div className="blog__details__tags">
                         <a href="#">{tag1}</a>
                         <a href="#">{tag2}</a>
                         <a href="#">{tag3}</a>
@@ -144,38 +144,38 @@ const BlogDetails = () => {
                     </div>
                   </div>
                 </div>
-                <div class="blog__details__btns">
-                  <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                      <a href="#" class="blog__details__btns__item">
-                        <p><span class="arrow_left"></span> Previous Pod</p>
+                <div className="blog__details__btns">
+                  <div className="row">
+                    <div className="col-lg-6 col-md-6 col-sm-6">
+                      <a href="#" className="blog__details__btns__item">
+                        <p><span className="arrow_left"></span> Previous Pod</p>
                         <h5>It S Classified How To Utilize Free Classified Ad Sites</h5>
                       </a>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                      <a href="#" class="blog__details__btns__item blog__details__btns__item--next">
-                        <p>Next Pod <span class="arrow_right"></span></p>
+                    <div className="col-lg-6 col-md-6 col-sm-6">
+                      <a href="#" className="blog__details__btns__item blog__details__btns__item--next">
+                        <p>Next Pod <span className="arrow_right"></span></p>
                         <h5>Tips For Choosing The Perfect Gloss For Your Lips</h5>
                       </a>
                     </div>
                   </div>
                 </div>
-                <div class="blog__details__comment">
+                <div className="blog__details__comment">
                   <h4>Leave A Comment</h4>
                   <form action="#">
-                    <div class="row">
-                      <div class="col-lg-4 col-md-4">
+                    <div className="row">
+                      <div className="col-lg-4 col-md-4">
                         <input type="text" placeholder="Name" />
                       </div>
-                      <div class="col-lg-4 col-md-4">
+                      <div className="col-lg-4 col-md-4">
                         <input type="text" placeholder="Email" />
                       </div>
-                      <div class="col-lg-4 col-md-4">
+                      <div className="col-lg-4 col-md-4">
                         <input type="text" placeholder="Phone" />
                       </div>
-                      <div class="col-lg-12 text-center">
+                      <div className="col-lg-12 text-center">
                         <textarea placeholder="Comment"></textarea>
-                        <button type="submit" class="site-btn">Post Comment</button>
+                        <button type="submit" className="site-btn">Post Comment</button>
                       </div>
                     </div>
                   </form>
@@ -192,10 +192,10 @@ const BlogDetails = () => {
       {/* Footer Section End  */}
 
       {/* Search Begin */}
-      <div class="search-model">
-        <div class="h-100 d-flex align-items-center justify-content-center">
-          <div class="search-close-switch">+</div>
-          <form class="search-model-form">
+      <div className="search-model">
+        <div className="h-100 d-flex align-items-center justify-content-center">
+          <div className="search-close-switch">+</div>
+          <form className="search-model-form">
             <input type="text" id="search-input" placeholder="Search here....." />
           </form>
         </div>

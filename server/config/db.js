@@ -2,9 +2,10 @@ const mysql = require('mysql');
 
 const db = mysql.createConnection({
   host: 'localhost',
+  port: '8889',
   user: 'root',
-  password: '',
-  database: 'node-project'
+  password: 'root',
+  database: 'node_project'
 });
 
 module.exports = db;

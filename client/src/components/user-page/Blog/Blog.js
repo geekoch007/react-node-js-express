@@ -26,9 +26,6 @@ const Blog = () => {
     fetchData();
   }, [])
 
-  console.log('blog', blog);
-
-
   return (
     <>
       {/* Page Preloder */}
@@ -62,26 +59,20 @@ const Blog = () => {
           <div className="row">
 
             {blog && blog.length > 0 && blog.map((blogObj, index) => (
-              <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="blog__item">
-                  <div class="blog__item__pic set-bg" style={{ backgroundImage: `url("${blogObj.img}")` }}></div>
-                  <div class="blog__item__text">
+              <div key={index} className="col-lg-4 col-md-6 col-sm-6">
+                <div className="blog__item">
+                  <div className="blog__item__pic set-bg" style={{ backgroundImage: `url("${blogObj.img}")` }}></div>
+                  <div className="blog__item__text">
                     <span><img src="http://localhost:8081/mf_img/icon/calendar.png" alt="" /> {formatDate(blogObj.date)}</span>
                     <h5>{blogObj.title}</h5>
                     <a href={`/blog-details/${blogObj.id} `}>Read More</a>
                   </div>
                 </div>
               </div>
-
-
-
             ))}
 
           </div>
         </div>
-
-
-
 
       </section>
       {/* Blog Section End */}

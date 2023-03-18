@@ -23,7 +23,7 @@ import App from './App';
 // import 'assets/js/owl.carousel.min.js';
 // import 'assets/js/main.js';
 
-import './function';
+// import './function';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

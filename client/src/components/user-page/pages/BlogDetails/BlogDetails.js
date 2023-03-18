@@ -1,21 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import './blogdetails.css';
-import Axios from 'axios';
-import { useParams, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import "./blogdetails.css";
+import Axios from "axios";
+import { useParams } from "react-router-dom";
 
-import Menu from '../../Imports/Menu';
-import Header from '../../Imports/Header';
-import Footer from '../../Imports/Footer';
+import Menu from "../../Imports/Menu";
+import Header from "../../Imports/Header";
+import Footer from "../../Imports/Footer";
 
+import { formatDate } from "../../../../utils/format";
 
 const BlogDetails = () => {
   const [title, setTitle] = useState("");
   const [auther, setAuther] = useState("");
   const [date, setDate] = useState("");
-  const formatDate = (dateString) => {
-    const options = { year: "numeric", month: "long", day: "numeric" }
-    return new Date(dateString).toLocaleDateString(undefined, options)
-  }
   const [comment, setComment] = useState("");
   const [img, setImg] = useState("");
   const [description1, setDescription1] = useState("");
@@ -30,9 +27,9 @@ const BlogDetails = () => {
 
   let { id } = useParams();
 
-  const fetchData = () => {
-    return Axios.get(`http://localhost:8081/api/getBlog/${id}`)
-      .then((data) => {
+  useEffect(() => {
+    const fetchData = () => {
+      return Axios.get(`http://localhost:8081/api/blog/${id}`).then((data) => {
         setTitle(data.data[0].title);
         setAuther(data.data[0].auther);
         setDate(data.data[0].date);
@@ -48,13 +45,10 @@ const BlogDetails = () => {
         setTag2(data.data[0].tag2);
         setTag3(data.data[0].tag3);
       });
-  }
-  useEffect(() => {
+    };
+
     fetchData();
-  }, [])
-
-  console.log(BlogDetails);
-
+  }, [id]);
 
   return (
     <>
@@ -104,10 +98,26 @@ const BlogDetails = () => {
                 <div className="blog__details__share">
                   <span>share</span>
                   <ul>
-                    <li><a href="#"><i className="fa fa-facebook"></i></a></li>
-                    <li><a href="#" className="twitter"><i className="fa fa-twitter"></i></a></li>
-                    <li><a href="#" className="youtube"><i className="fa fa-youtube-play"></i></a></li>
-                    <li><a href="#" className="linkedin"><i className="fa fa-linkedin"></i></a></li>
+                    <li>
+                      <a href="#">
+                        <i className="fa fa-facebook"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="twitter">
+                        <i className="fa fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="youtube">
+                        <i className="fa fa-youtube-play"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="linkedin">
+                        <i className="fa fa-linkedin"></i>
+                      </a>
+                    </li>
                   </ul>
                 </div>
                 <div className="blog__details__text">
@@ -148,14 +158,26 @@ const BlogDetails = () => {
                   <div className="row">
                     <div className="col-lg-6 col-md-6 col-sm-6">
                       <a href="#" className="blog__details__btns__item">
-                        <p><span className="arrow_left"></span> Previous Pod</p>
-                        <h5>It S Classified How To Utilize Free Classified Ad Sites</h5>
+                        <p>
+                          <span className="arrow_left"></span> Previous Pod
+                        </p>
+                        <h5>
+                          It S Classified How To Utilize Free Classified Ad
+                          Sites
+                        </h5>
                       </a>
                     </div>
                     <div className="col-lg-6 col-md-6 col-sm-6">
-                      <a href="#" className="blog__details__btns__item blog__details__btns__item--next">
-                        <p>Next Pod <span className="arrow_right"></span></p>
-                        <h5>Tips For Choosing The Perfect Gloss For Your Lips</h5>
+                      <a
+                        href="#"
+                        className="blog__details__btns__item blog__details__btns__item--next"
+                      >
+                        <p>
+                          Next Pod <span className="arrow_right"></span>
+                        </p>
+                        <h5>
+                          Tips For Choosing The Perfect Gloss For Your Lips
+                        </h5>
                       </a>
                     </div>
                   </div>
@@ -175,7 +197,9 @@ const BlogDetails = () => {
                       </div>
                       <div className="col-lg-12 text-center">
                         <textarea placeholder="Comment"></textarea>
-                        <button type="submit" className="site-btn">Post Comment</button>
+                        <button type="submit" className="site-btn">
+                          Post Comment
+                        </button>
                       </div>
                     </div>
                   </form>
@@ -196,13 +220,17 @@ const BlogDetails = () => {
         <div className="h-100 d-flex align-items-center justify-content-center">
           <div className="search-close-switch">+</div>
           <form className="search-model-form">
-            <input type="text" id="search-input" placeholder="Search here....." />
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search here....."
+            />
           </form>
         </div>
       </div>
       {/* Search End */}
     </>
-  )
-}
+  );
+};
 
 export default BlogDetails;

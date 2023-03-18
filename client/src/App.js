@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/user-page/Home/Home';
 import Shop from './components/user-page/Shop/Shop';
 import ShopDetails from './components/user-page/pages/ShopDetails/ShopDetails';
-import Blog from './components/user-page/Blog/Blog';
+import Blog from './components/user-page/pages/Blog/Blog';
 import Contact from './components/user-page/Contact/Contact';
 import AboutUs from './components/user-page/pages/AboutUs/AboutUs';
 import ShopingCart from './components/user-page/pages/ShopingCart/ShopingCart';
@@ -21,12 +21,13 @@ function App() {
           <Route exact index element={<Home />} />
           <Route exact path="/shop" element={<Shop />} />
           <Route exact path="/blog" element={<Blog />} />
+          <Route exact path="/blog/:id" element={<BlogDetails />} />
           <Route exact path="/contact" element={<Contact />} />
           <Route exact path="/about" element={<AboutUs />} />
           <Route exact path="/shop-details" element={<ShopDetails />} />
           <Route exact path="/shoping-cart" element={<ShopingCart />} />
           <Route exact path="/checkout" element={<CheckOut />} />
-          <Route exact path="/blog-details" element={<BlogDetails />} />
+         
           <Route exact path="*" element={<Home />} />
         </Route>
       </Routes>

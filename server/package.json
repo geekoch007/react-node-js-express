@@ -66,6 +66,7 @@
     "vary": "^1.1.2"
   },
   "scripts": {
+    "dev": "node --watch index.js",
     "start": "node index.js"
   },
   "keywords": [],

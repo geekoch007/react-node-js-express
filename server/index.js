@@ -32,7 +32,7 @@ app.get('/api/blog/:id', function (req, res) {
     if (err) {
       console.log(err);
     }
-    res.send(result);
+    res.send(result ? result[0] : null);
   });
 });
 
@@ -41,7 +41,6 @@ app.get('/api/blog', function (req, res) {
     if (err) {
       console.log(err);
     }
-    // console.log('result: ', result);
     res.send(result);
   });
 });

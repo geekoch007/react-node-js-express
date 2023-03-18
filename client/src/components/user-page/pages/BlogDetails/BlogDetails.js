@@ -9,6 +9,8 @@ import Footer from "../../Imports/Footer";
 
 import { formatDate } from "../../../../utils/format";
 
+const { REACT_APP_API_URL } = process.env || {};
+
 const BlogDetails = () => {
   const [title, setTitle] = useState("");
   const [auther, setAuther] = useState("");
@@ -29,7 +31,7 @@ const BlogDetails = () => {
 
   useEffect(() => {
     const fetchData = () => {
-      return Axios.get(`http://localhost:8081/api/blog/${id}`).then((data) => {
+      return Axios.get(`${REACT_APP_API_URL}/api/blog/${id}`).then((data) => {
         setTitle(data.data[0].title);
         setAuther(data.data[0].auther);
         setDate(data.data[0].date);

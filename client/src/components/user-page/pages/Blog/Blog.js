@@ -8,12 +8,14 @@ import Footer from "../../Imports/Footer";
 
 import { formatDate } from "../../../../utils/format";
 
+const { REACT_APP_API_URL } = process.env || {};
+
 const Blog = () => {
   const [blog, setBlog] = useState([]);
 
   useEffect(() => {
     const fetchData = () => {
-      return Axios.get("http://localhost:8081/api/blog").then((response) =>
+      return Axios.get(`${REACT_APP_API_URL}/api/blog`).then((response) =>
         setBlog(response.data)
       );
     };

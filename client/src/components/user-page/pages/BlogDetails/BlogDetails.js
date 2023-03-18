@@ -3,6 +3,13 @@ import "./blogdetails.css";
 import Axios from "axios";
 import { useParams } from "react-router-dom";
 
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  TwitterShareButton,
+  TwitterIcon,
+} from "react-share";
+
 import PageLayout from "../../layouts/PageLayout";
 
 import { formatDate } from "../../../../utils/format";
@@ -71,10 +78,11 @@ const BlogDetails = () => {
     fetchData();
   }, [id]);
 
+  const url = window.location.href;
+
   return (
     <>
       <PageLayout>
-        
         {/* Blog Details Hero Begin */}
         <section className="blog-hero spad">
           <div className="container">
@@ -109,9 +117,22 @@ const BlogDetails = () => {
                     <span>share</span>
                     <ul>
                       <li>
-                        <a href="#">
-                          <i className="fa fa-facebook"></i>
-                        </a>
+                        <FacebookShareButton
+                          url={url}
+                          quote={title}
+                          hashtag={`#${url}`}
+                        >
+                          <FacebookIcon size={46} round />
+                        </FacebookShareButton>
+                      </li>
+                      <li>
+                        <TwitterShareButton
+                          url={url}
+                          quote={title}
+                          hashtag={`#${url}`}
+                        >
+                          <TwitterIcon size={46} round />
+                        </TwitterShareButton>
                       </li>
                       <li>
                         <a href="#" className="twitter">
@@ -220,7 +241,6 @@ const BlogDetails = () => {
           </div>
         </section>
         {/* Blog Details Section End */}
-
       </PageLayout>
     </>
   );

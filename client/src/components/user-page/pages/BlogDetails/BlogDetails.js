@@ -134,11 +134,7 @@ const BlogDetails = () => {
                           <TwitterIcon size={46} round />
                         </TwitterShareButton>
                       </li>
-                      <li>
-                        <a href="#" className="twitter">
-                          <i className="fa fa-twitter"></i>
-                        </a>
-                      </li>
+
                       <li>
                         <a href="#" className="youtube">
                           <i className="fa fa-youtube-play"></i>

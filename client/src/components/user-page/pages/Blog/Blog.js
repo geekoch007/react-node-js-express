@@ -3,23 +3,36 @@ import "./blog.css";
 import Axios from "axios";
 
 import PageLayout from "../../layouts/PageLayout";
+import Pagination from "../../Pagination/Pagination";
 
 import { formatDate } from "../../../../utils/format";
 
 const { REACT_APP_API_URL } = process.env || {};
 
+const pageSize = 2;
+
 const Blog = () => {
+  const [total, setTotal] = useState(0);
   const [posts, setPosts] = useState([]);
 
-  useEffect(() => {
-    const fetchData = () => {
-      return Axios.get(`${REACT_APP_API_URL}/api/blog`)
-        .then((response) => setPosts(response.data))
-        .catch((error) => console.log(error));
-    };
+  const fetchData = (page = 1) => {
+    const params = { page, size: pageSize };
+    return Axios.get(`${REACT_APP_API_URL}/api/blog`, { params })
+      .then((response) => {
+        setPosts(response.data.items);
+        setTotal(response.data.total);
+      })
+      .catch((error) => console.log(error));
+  };
 
+  useEffect(() => {
     fetchData();
   }, []);
+
+  const handlePageChange = ({ selected }) => {
+    console.log("handlePageChange: ", { selected });
+    fetchData(selected+1);
+  };
 
   return (
     <PageLayout>
@@ -70,6 +83,11 @@ const Blog = () => {
               </div>
             )}
           </div>
+          <Pagination
+            total={total}
+            size={pageSize}
+            onPageChange={handlePageChange}
+          />
         </div>
       </section>
       {/* Blog Section End */}
